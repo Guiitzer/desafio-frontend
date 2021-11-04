@@ -4,7 +4,7 @@
 Desafio de front-end para a vaga na empresa Fidúcia, desenvolvido por Guilherme Tosta,
 
 Pagina incial
-![Initial Page](public/initialPage.png?raw=true "Pagina Inicial")
+![Initial Page](public/InitialPage.png?raw=true "Pagina Inicial")
 
 Modal com o pokemon selecionado
 ![Pokemon](public/modal.png?raw=true "Modal")

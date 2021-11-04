@@ -1,11 +1,11 @@
 import React from "react";
+import { PropType } from "./interface";
 import "./modal.css";
-import { useState, useEffect } from "react";
 
-function Modal(props) {
-  const pesoAjustado = props.pokemon.weight / 10;
-  const altAjustado = (props.pokemon.height / 10).toFixed(2);
-  const statValue = props.pokemon.stats.map((arr) => arr.base_stat);
+function Modal({ pokemon, onClose }: PropType): JSX.Element {
+  const pesoAjustado = pokemon.weight / 10;
+  const altAjustado = (pokemon.height / 10).toFixed(2);
+  const statValue = pokemon.stats.map((arr) => arr.base_stat);
   const totHP = statValue[0];
   const totATK = statValue[1];
   const totDEF = statValue[2];
@@ -14,18 +14,18 @@ function Modal(props) {
   return (
     <div className="modal-backdrop">
       <div className="modal">
-        <button className="close-btn" onClick={props.onClose}>
+        <button className="close-btn" onClick={onClose}>
           ✖
         </button>
         <div className="modal-informations">
-          <h3 className="name-modal">{props.pokemon.name}</h3>
+          <h3 className="name-modal">{pokemon.name}</h3>
           <div className="picture-modal">
             <img
-              src={props.pokemon.sprites.front_default}
+              src={pokemon.sprites.front_default}
               alt="Imagem do pokemon selecionado"
             ></img>
             <img
-              src={props.pokemon.sprites.back_default}
+              src={pokemon.sprites.back_default}
               alt="Imagem do pokemon selecionado"
             ></img>
           </div>
@@ -39,9 +39,7 @@ function Modal(props) {
             <div className="princ-habil">
               <div>
                 Principais Habilidades:{" "}
-                {props.pokemon.abilities
-                  .map((arr) => arr.ability.name)
-                  .join(" | ")}
+                {pokemon.abilities.map((arr) => arr.ability.name).join(" | ")}
               </div>
             </div>
             <div className="peso-alt">

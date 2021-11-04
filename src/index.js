@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Pokedex from './Pokedex';
+import Pokedex from './components/Pokedex';
 
 ReactDOM.render(
   <React.StrictMode>
